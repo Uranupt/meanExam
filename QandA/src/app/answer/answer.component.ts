@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
-import { Answer } from '../answer'
+import { Answer } from '../answer';
+import { Question } from '../question';
 
 @Component({
   selector: 'app-answer',
@@ -12,7 +13,7 @@ export class AnswerComponent implements OnInit {
 
   user = ''
   idx = null;
-  question = {};
+  question = new Question();
   answer = new Answer();
 
   newAnswer = function(){
