@@ -1,0 +1,16 @@
+.logout{
+  position: absolute;
+  vertical-align: top;
+  right: 30px;
+  top: 20px;
+}
+
+div{
+  border-bottom: black solid 1px;
+  width: 500px;
+}
+
+p{
+  display:inline-block;
+  text-align: right;
+}

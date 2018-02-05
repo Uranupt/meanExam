@@ -1,0 +1,44 @@
+.leftML{
+  margin-left: 100px;
+}
+
+.leftMS{
+  margin-left: 20px;
+}
+
+.widthL{
+  width: 200px;
+}
+
+.alignT{
+  vertical-align: top;
+}
+
+.topMS{
+  margin-top: 20px;
+}
+
+.inlineB{
+  display: inline-block;
+}
+
+.logout{
+  position: absolute;
+  vertical-align: top;
+  right: 30px;
+  top: 30px;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+td{
+  padding-right: 35px;
+  font-size: 14pt;
+}
+
+table{
+  border: black solid 1px;
+  width: 750px;
+}

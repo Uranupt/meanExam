@@ -1,0 +1,58 @@
+<div *ngIf="username == '' ">
+  <h1>Q&A Login</h1>
+  <form #formData='ngForm' (submit)="logIn()">
+    Name:  <input [ngClass]="{leftML: true, widthL: true}"
+      type="text"
+      name="name"
+      required
+      [(ngModel)]='tempusername'
+      #name='ngModel'>
+      <input type="submit" value="Login" *ngIf="formData.valid">
+  </form>
+</div>
+
+
+<div *ngIf="username != '' ">
+  <h1>Hi {{username}}!</h1>
+  <a href='/logout' [ngClass]="{logout: true}">Logout</a>
+  <a [routerLink]="['new']">Add a Question</a><br>
+  Search: <input
+   type="search"
+   name='namesearch'
+   [(ngModel)]='search'
+   #namesearch='ngModel'
+   (ngModelChange)="filter()"
+   [ngClass]="{topMS: true, leftMS: true}">
+
+  <table *ngIf="namesearch.pristine" [ngClass]="{topMS: true}">
+    <tr>
+      <td [ngClass]="{bold: true}">Question</td>
+      <td [ngClass]="{bold: true}">Answers</td>
+      <td [ngClass]="{bold: true}">Action</td>
+    </tr>
+    <tr *ngFor="let question of questions; let i = index">
+      <td>{{question.title}}</td>
+      <td>{{question.answers.length}}</td>
+      <td>
+        <a [routerLink]="['view', i]">Show</a>
+        <a [routerLink]="['answer', i]">Answer</a>
+      </td>
+    </tr>
+  </table>
+
+  <table *ngIf="namesearch.dirty" [ngClass]="{topMS: true}">
+    <tr>
+      <td [ngClass]="{bold: true}">Question</td>
+      <td [ngClass]="{bold: true}">Answers</td>
+      <td [ngClass]="{bold: true}">Action</td>
+    </tr>
+    <tr *ngFor="let question of modquestions; let i = index">
+      <td>{{question.title}}</td>
+      <td>{{question.answers.length}}</td>
+      <td>
+        <a [routerLink]="['view', i]">Show</a>
+        <a [routerLink]="['answer', i]">Answer</a>
+      </td>
+    </tr>
+  </table>
+</div>

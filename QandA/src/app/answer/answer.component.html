@@ -1,0 +1,30 @@
+<a [routerLink]="['']">Home</a>
+<b>|</b>
+<a [routerLink]="['/view', idx]">Back to Question</a>
+
+<a href='/logout' [ngClass]="{logout: true}">Logout</a>
+
+<h1>{{question.title}}</h1>
+<h2>{{question.description}}</h2>
+<form #formData="ngForm" (submit)="newAnswer()">
+  <p>Your Answer: </p><textarea
+    name="content"
+    required
+    minlength="5"
+    [(ngModel)]="answer.content"
+    #content="ngModel"
+
+  ></textarea>
+
+  <p>Details:</p><textarea
+    name="details"
+    [(ngModel)]="answer.details"
+    #details="ngModel"
+
+  ></textarea>
+
+  <button [routerLink]="['/']">Cancel</button>
+
+  <input type="submit" value="Submit" *ngIf="formData.valid">
+
+</form>

@@ -1,0 +1,15 @@
+<a [routerLink]="['']">Home</a>
+<b>|</b>
+<a [routerLink]="['/answer', idx]">Answer</a>
+
+<a href='/logout' [ngClass]="{logout: true}">Logout</a>
+<h1>{{question.title}}</h1>
+<h2>{{question.description}}</h2>
+
+<div *ngFor="let answer of question.answers; let i = index">
+  <h3>{{answer.name}}</h3>
+  <h2>{{answer.content}}</h2>
+  <h3>{{answer.details}}</h3>
+  <p>{{answer.likes}} Likes</p>
+  <button (click)="like(i)">Like!</button>
+</div>
