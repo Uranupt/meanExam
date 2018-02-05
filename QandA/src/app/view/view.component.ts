@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
+import { Question } from '../question';
 
 @Component({
   selector: 'app-view',
@@ -10,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ViewComponent implements OnInit {
 
   idx = null;
-  question = {};
+  question = new Question();
 
   like = function(idx){
     this._dataService.newLike({index: idx, question: this.question})
